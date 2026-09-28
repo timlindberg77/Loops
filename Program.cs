@@ -41,24 +41,28 @@ namespace Loops
             //• Om gissningen är korrekt, skriv ut "Grattis! Du gissade siffran!"
             //• Om du vill kan du hålla reda på hur många försök det tar för användaren
             //att gissa rätt antal.
-                Random RandomNummer = new Random();
+                //genererar ett random nummer
+                Random RandomNummer = new Random(); 
                 int tal = RandomNummer.Next(1, 101);
-                int Antalgissningar = 0;
+                //antalet gissningar
+                int Antalgissningar = 0; 
                 int gissning = 0;
                 Console.WriteLine("Gissa ett tal mellan 1-100");
                 while (gissning != tal)
                 {
                     gissning = int.Parse(Console.ReadLine());
                     Antalgissningar++;
-
+                    //ifall det gissar för högt
                     if (gissning > tal)
                     {
                         Console.WriteLine("För högt!");
                     }
+                    //ifall de gissar för lågt
                     else if (gissning < tal)
                     {
                         Console.WriteLine("För lågt!");
                     }
+                    //gissar det rätt
                     else
                     {
                         Console.WriteLine("Du Gissade rätt");
